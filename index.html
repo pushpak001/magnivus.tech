@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnivus Tech</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { line-height: 1.6; scroll-behavior: smooth; padding-top: 60px; background:#f9f9f9; overflow-x:hidden; }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(30,60,114,0.95);
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    nav.scrolled { background: rgba(30,60,114,1); }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #FFD700; }
+
+    /* Hero Section */
+    header {
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 150px 20px 100px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 15px; animation: fadeInDown 1s ease; z-index:1; position: relative; }
+    header p { font-size: 1.2rem; margin-bottom: 25px; animation: fadeIn 1.5s ease; z-index:1; position: relative; }
+    header a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: white;
+      color: #2a5298;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+      position: relative;
+      z-index:1;
+    }
+    header a:hover { transform: translateY(-3px); background: #f0f0f0; }
+
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float 15s linear infinite;
+      z-index:0;
+    }
+    .shape1 { width: 80px; height: 80px; background: #FFD700; top: 20%; left: 10%; animation-duration: 18s; }
+    .shape2 { width: 60px; height: 60px; background: #FF6347; top: 50%; left: 80%; animation-duration: 12s; }
+    .shape3 { width: 100px; height: 100px; background: #00CED1; top: 70%; left: 30%; animation-duration: 20s; }
+    .shape4 { width: 50px; height: 50px; background: #FF69B4; top: 30%; left: 50%; animation-duration: 14s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-50px) translateX(30px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    /* Animations for text */
+    @keyframes fadeInDown { 0% {opacity:0; transform: translateY(-50px);} 100% {opacity:1; transform: translateY(0);} }
+    @keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
+
+    /* Sections */
+    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
+    section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; position: relative; }
+    section h2::after { content:""; width:60px; height:3px; background:#2a5298; display:block; margin:10px auto 0; border-radius:2px; }
+    section p { text-align: center; color: #555; margin-bottom: 40px; }
+
+    /* Cards */
+    .services, .careers { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .service-card, .career-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .service-card:hover, .career-card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px rgba(0,0,0,0.15); }
+
+    /* Buttons */
+    .career-card a { display:inline-block; margin-top:12px; padding:10px 20px; background:#2a5298; color:white; border-radius:25px; text-decoration:none; font-weight:bold; transition: transform 0.3s, background 0.3s; }
+    .career-card a:hover { transform: translateY(-3px); background:#1e3c72; }
+
+    /* Footer */
+    footer { background: #222; color: white; text-align: center; padding: 20px; }
+
+    /* Links */
+    a.email-link { color: #2a5298; text-decoration: none; font-weight: bold; }
+    a.email-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) { .services, .careers { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#career">Career</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+
+    <h1>Magnivus Tech</h1>
+    <p>Innovative IT Solutions for Web, Cloud, and Cybersecurity.</p>
+    <a href="#services">Explore Services</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Magnivus Tech, we empower businesses with next-generation IT solutions. From custom web applications to secure cloud infrastructure, we deliver cutting-edge technology tailored to your needs.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Modern, scalable, and responsive websites.</p>
+      </div>
+      <div class="service-card">
+        <h3>Cloud Solutions</h3>
+        <p>Secure and optimized cloud infrastructure.</p>
+      </div>
+      <div class="service-card">
+        <h3>Cybersecurity</h3>
+        <p>Protect your digital assets with advanced security.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Section -->
+  <section id="career">
+    <h2>Career Opportunities</h2>
+    <p>Magnivus Tech is hiring! We welcome talented <strong>freshers</strong> and enthusiastic <strong>interns</strong> to join our team and grow with us.</p>
+    <div class="careers">
+      <div class="career-card">
+        <h3>Frontend Developer (Intern/Fresher)</h3>
+        <p>Learn and contribute to building modern web interfaces using HTML, CSS, JS, and React.</p>
+        <p><strong>Salary:</strong> Not Disclosed</p>
+        <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">Apply Now</a>
+      </div>
+      <div class="career-card">
+        <h3>Backend Developer (Intern/Fresher)</h3>
+        <p>Work on server-side applications, databases, and APIs. Great for beginners eager to learn.</p>
+        <p><strong>Salary:</strong> Not Disclosed</p>
+        <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">Apply Now</a>
+      </div>
+      <div class="career-card">
+        <h3>Cloud Engineer (Intern/Fresher)</h3>
+        <p>Gain hands-on experience with cloud infrastructure, deployment, and scalable solutions.</p>
+        <p><strong>Salary:</strong> Not Disclosed</p>
+        <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank">Apply Now</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:20px;">Or send your resume to <a class="email-link" href="mailto:careers@magnivustech.com">careers@magnivustech.com</a></p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out for collaborations or inquiries.</p>
+    <p>Email: <a class="email-link" href="mailto:info@magnivustech.com">info@magnivustech.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Magnivus Tech. All rights reserved.</p>
+  </footer>
+
+  <!-- JS for Smooth Scroll & Navbar -->
+  <script>
+    const links = document.querySelectorAll('nav a');
+    for(const link of links) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    // Change navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if(window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+  </script>
+
+</body>
+</html>
